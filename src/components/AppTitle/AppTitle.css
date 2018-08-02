@@ -1,4 +1,14 @@
-.app-title{
-    padding:15px 0;
-    width:100%;
+.Pokedex__header{
+    padding:50px 0 50px 0;
+    background: linear-gradient(to left, rgb(252, 135, 135), rgb(226, 26, 26));
+    border-bottom:1px solid black;
+    display:block;
+}
+
+.Pokedex__title{
+    padding: 10px 38px 5px 38px;
+    margin: -38px auto 12px;
+    background-color: white;
+    border: 1px solid black;
+    width:220px;
 }

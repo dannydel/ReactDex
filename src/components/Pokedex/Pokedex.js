@@ -7,6 +7,7 @@ import PokemonSearchInput from '../../components/PokemonSearchInput/PokemonSearc
 import PokemonRow from '../PokemonRow/PokemonRow';
 import LoadingText from '../LoadingText/LoadingText';
 import PokemonDetails from '../PokemonDetails/PokemonDetails';
+import PokedexHeader from '../PokedexHeader/PokedexHeader';
 
 
 class Pokedex extends PureComponent {
@@ -43,18 +44,13 @@ class Pokedex extends PureComponent {
          
         return(           
             <Fragment>
+                <PokedexHeader title={"ReactDex"} />
                 <div className="container-fluid">
-                    <div className="row">
-                        <AppTitle title={"ReactDex"} />
-                    </div>
-                    <div className="row">
-                        
-                    </div>
                     <div className="row justify-content-center align-items-center">
                         <div className="col-6 justify-content-center align-items-center">
-                        
+                        <PokemonSearchInput onInput={updateSearch} />
                             <div className="Pokedex__PokemonList">
-                                <PokemonSearchInput onInput={updateSearch} />
+                                
                                 {
                                     !loading && pokemon.length > 0 ? pokemon.map(p =>( 
                                         <PokemonRow 
