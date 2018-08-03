@@ -1,17 +1,67 @@
-
-.Pokedex__PokemonList{
-    width: 400px;
-    /* border: 1px solid gray; */
-    /* border-radius: 4px; */
-    padding-left:10px;
-    padding-top: 25em;
-    margin: 0 auto;
-    /* height:500px; */
-    overflow-y:scroll;
+.container{
+    margin:5px 10px 5px 10px;
 }
+
 
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
+
+.Pokedex__Main{
+    padding-top:25em;
+}
+
+
+.Pokedex__Grid{
+    display: grid;
+        justify-content: center;
+        grid-template-columns: 250px 250px 250px 250px 250px 250px;
+        grid-gap: 10px;
+        padding: 10px;
+}
+
+/* Responsive Pokedex__Grid */
+@media screen and (max-width: 1500px){
+    .Pokedex__Grid{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 250px 250px 250px 250px;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+    .Pokedex__Grid{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 250px 250px 250px;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .Pokedex__Grid{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 250px 250px;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+}
+
+
+@media screen and (max-width:550px){
+    .Pokedex__Grid{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 250px ;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+} 
+
 

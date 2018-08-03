@@ -3,10 +3,10 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import PokemonImage from '../PokemonImage/PokemonImage';
 
-import '../PokemonRow/PokemonRow.css';
+import '../PokemonCard/PokemonCard.css';
 
 
-class PokemonRow extends PureComponent{
+class PokemonCard extends PureComponent{
 
     // toggleDrawer() {
         
@@ -36,24 +36,26 @@ class PokemonRow extends PureComponent{
 
         return(
             <Fragment key={name + "_card"} >
-                <div className="PokemonRow" onClick={onClick}>
-                    <PokemonImage width="75px" src={this.getImageSource(url)} />
-                    <span key={name + "_name"}>{this.capitalizeName(name)}</span>            
+                <div className="PokemonCard"  onClick={onClick}>
+                    <PokemonImage width="100%" src={this.getImageSource(url)} />
+                    <div className="PokemonCard__Container">
+                        <h4 className="card-title" key={name + "_name"}>{this.capitalizeName(name)}</h4>
+                    </div>            
                 </div>
             </Fragment>
         );
     }
 }
 
-export default PokemonRow;
+export default PokemonCard;
 
-PokemonRow.propTypes = {
+PokemonCard.propTypes = {
     name : PropTypes.string,
     url : PropTypes.string,
     onClick : PropTypes.func,
 };
 
-PokemonRow.defaultProps = {
+PokemonCard.defaultProps = {
     name : '',
     url : '',
     onClick: () => {},
