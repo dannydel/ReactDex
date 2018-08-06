@@ -1,5 +1,7 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent} from 'react';
+import  PropTypes  from 'prop-types';
 import './PokedexHeader.css';
+import PokemonSearchInput from  '../PokemonSearchInput/PokemonSearchInput';
 
 class PokedexHeader extends PureComponent {
 
@@ -8,32 +10,31 @@ class PokedexHeader extends PureComponent {
     }
 
     resizeHeaderOnScroll(){
-        
-        console.log('fired');
+        const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         const distanceY = window.pageYOffset || 
             document.documentElement.scrollTop,
-            shrinkOn = 150,
+            shrinkOn = 120,
             headerElement = document.getElementById('js-header');
-
-            
-
-            console.log(distanceY);
-            if(distanceY > shrinkOn){
-                headerElement.classList.add('smaller');
-                
-            }else{
-                headerElement.classList.remove('smaller');
+            if(width > 400){
+                if(distanceY > shrinkOn){
+                    headerElement.classList.add('smaller');
+                    
+                }else{
+                    headerElement.classList.remove('smaller');
+                }
             }
     }
 
     
     render(){
-        const {title} = this.props;
+        const {title, updateSearch} = this.props;
         return(
             <header id="js-header">
                 <div className="container clearfix">
                     <h1 id="logo">{title}</h1>
-                    
+                    <nav>
+                        <PokemonSearchInput onInput={updateSearch} />
+                    </nav>
                 </div>
             </header>
         )
@@ -41,3 +42,7 @@ class PokedexHeader extends PureComponent {
 }
 
 export default PokedexHeader;
+
+PokedexHeader.propTypes = {
+    updateSearch : PropTypes.func.isRequired,
+}

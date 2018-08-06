@@ -1,10 +1,77 @@
 .PokemonSearch{
-    padding:5px 0px 5px 0px;
+    margin-top:5px;
+    float:right;
 }
 .PokemonSearch__Input{
-    border-radius: 3px;
-    border: 1px solid #e7e7e7;
-    background-color: #e7e7e1;
-    font-size: 25px;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    border-bottom: 2px solid white;
+    background-color:transparent;
+    font-size: 30px;
     width: 100%;
+    color:white;
 }
+
+.PokemonSearch__Input:focus{
+    
+   outline:none;
+    border-bottom:2px solid white !important;
+}
+
+::-webkit-input-placeholder {
+    color:white;
+}
+
+::-moz-placeholder {
+    color:white;
+}
+
+::-ms-placeholder {
+    color:white;
+}
+
+::placeholder {
+    color:white;
+}
+
+@media screen and (max-width:700px){
+    .PokemonSearch{
+        margin-top:5px;
+        float:right;
+    }
+    .PokemonSearch__Input{
+        border-top:none;
+        border-right:none;
+        border-left:none;
+        border-bottom: 2px solid white;
+        background-color:transparent;
+        font-size: 30px;
+        width: 100%;
+        color:white;
+        text-align:center;
+    }
+    
+    .PokemonSearch__Input:focus{
+        
+       outline:none;
+        border-bottom:2px solid white !important;
+    }
+    
+    ::-webkit-input-placeholder {
+        color:white;
+    }
+    
+    ::-moz-placeholder {
+        color:white;
+    }
+    
+    ::-ms-placeholder {
+        color:white;
+    }
+    
+    ::placeholder {
+        color:white;
+    }
+}
+

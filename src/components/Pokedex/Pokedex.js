@@ -2,7 +2,6 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './Pokedex.css';
 
-import AppTitle from '../../components/AppTitle/AppTitle';
 import PokemonSearchInput from '../../components/PokemonSearchInput/PokemonSearchInput';
 import PokemonRow from '../PokemonCard/PokemonCard';
 import LoadingText from '../LoadingText/LoadingText';
@@ -44,10 +43,10 @@ class Pokedex extends PureComponent {
          
         return(           
             <Fragment>
-                <PokedexHeader title={"ReactDex"} />
+                <PokedexHeader title={"ReactDex"} updateSearch={updateSearch} />
                 <div className="container">
                     <div className="Pokedex__Main">
-                    <PokemonSearchInput onInput={updateSearch} />
+                    {/* <PokemonSearchInput onInput={updateSearch} /> */}
                         <div className="Pokedex__Grid">
                             {
                                 !loading && pokemon.length > 0 ? pokemon.map(p =>( 
@@ -85,33 +84,3 @@ Pokedex.propTypes = {
 Pokedex.defaultProps = {
     pokemon : [],
 };
-
-
-/* 
-
-<div className="col-6 justify-content-center align-items-center">
-                        <PokemonSearchInput onInput={updateSearch} />
-                            <div className="Pokedex__PokemonList">
-                                
-                                {
-                                    !loading && pokemon.length > 0 ? pokemon.map(p =>( 
-                                        <PokemonRow 
-                                            key={p.name}
-                                            name={p.name} 
-                                            url={p.url} 
-                                            onClick={ (e) => {this.fetchPokemonDetails(p.name,e)}}
-                                            />
-                                    )) : 
-                                         <LoadingText />
-                                }
-                            </div>
-                        </div>
-                        <div className="screen col-6">
-                            { this.state.fetched ?
-                                <PokemonDetails details={this.state.pokemonDetails} fetched={this.state.fetched}/> :
-                                <LoadingText/>
-                            }
-                            
-                        </div>
-
-*/

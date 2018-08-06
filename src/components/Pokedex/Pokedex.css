@@ -51,6 +51,10 @@
         grid-gap: 10px;
         padding: 10px;
     }
+
+    .Pokedex__Main{
+        padding-top:12em;
+    }
 }
 
 
@@ -61,6 +65,9 @@
         grid-template-columns: 250px ;
         grid-gap: 10px;
         padding: 10px;
+    }
+    .Pokedex__Main{
+        padding-top:12em;
     }
 } 
 

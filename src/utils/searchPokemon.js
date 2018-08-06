@@ -10,7 +10,7 @@
 
 export default function searchPokemon(searchTerm, pokemon){
     const searched = pokemon.filter(p => 
-        p.name.toLowerCase().includes(searchTerm.toLowerCase())
+        p.name.toLowerCase().startsWith(searchTerm.toLowerCase())
     );
     
     //console.log(searched);

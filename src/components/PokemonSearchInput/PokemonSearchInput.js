@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 import './PokemonSearchInput.css';
 
-/**
- * Simple Input component.
- */
-
 export default class PokemonSearchInput extends PureComponent {
     constructor() {
       super();
@@ -23,7 +19,7 @@ export default class PokemonSearchInput extends PureComponent {
           {/* <SearchIcon className="PokemonFilter__search" /> */}
           <input
             className="PokemonSearch__Input"
-            placeholder="Search by Name"
+            placeholder="Search Pokemon"
             onInput={this.handleInput}
             
           />
