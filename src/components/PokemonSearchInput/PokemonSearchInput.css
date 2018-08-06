@@ -39,6 +39,7 @@
     .PokemonSearch{
         margin-top:5px;
         float:right;
+        display:block;
     }
     .PokemonSearch__Input{
         border-top:none;

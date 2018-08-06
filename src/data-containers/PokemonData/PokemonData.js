@@ -18,7 +18,7 @@ export default function PokemonData(WrappedComponent){
         }
     
         componentDidMount() {
-            fetch('https://pokeapi.co/api/v2/pokemon?limit=155')
+            fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=50/')
             .then(res => res.json())
             .then(data =>  
                 this.setState({

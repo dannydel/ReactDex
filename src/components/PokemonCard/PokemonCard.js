@@ -7,19 +7,20 @@ import '../PokemonCard/PokemonCard.css';
 
 
 class PokemonCard extends PureComponent{
-
-    // toggleDrawer() {
-        
-    //     this.setState(state => ({
-    //       showDrawer : !state.showDrawer,
-    //     }));
-    //     document.getElementById("root").style.marginLeft = "0";
-
-    //     console.log(this.state.showDrawer);
-    //   }
-
     getPokemonDetails(){
 
+    }
+
+    showDetails(name){
+        let plus = document.getElementById(name + "_plus");
+
+        if(plus.className === "plus-details"){
+            plus.className = "close-details";
+        }else{
+            plus.className = "plus-details";
+        }
+
+        //go fetch details and display details area once fetch is complete?
     }
 
     getImageSource(url){
@@ -36,11 +37,14 @@ class PokemonCard extends PureComponent{
 
         return(
             <Fragment key={name + "_card"} >
-                <div className="PokemonCard"  onClick={onClick}>
+                {/* <div className="PokemonCard"  onClick={onClick}> */}
+                <div className="PokemonCard" onClick={() => this.showDetails(name, 45)}>
                     <PokemonImage width="100%" src={this.getImageSource(url)} />
-                    <div className="PokemonCard__Container">
-                        <h4 className="card-title" key={name + "_name"}>{this.capitalizeName(name)}</h4>
-                    </div>            
+                    <h4 className="card-title" key={name + "_name"}>{this.capitalizeName(name)}</h4>
+                    <h1 id={name + "_plus"} key={name} className="plus-details">+</h1>
+                    <div>
+
+                    </div>
                 </div>
             </Fragment>
         );

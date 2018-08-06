@@ -2,10 +2,8 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './Pokedex.css';
 
-import PokemonSearchInput from '../../components/PokemonSearchInput/PokemonSearchInput';
 import PokemonRow from '../PokemonCard/PokemonCard';
 import LoadingText from '../LoadingText/LoadingText';
-import PokemonDetails from '../PokemonDetails/PokemonDetails';
 import PokedexHeader from '../PokedexHeader/PokedexHeader';
 
 

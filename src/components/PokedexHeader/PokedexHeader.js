@@ -15,13 +15,15 @@ class PokedexHeader extends PureComponent {
             document.documentElement.scrollTop,
             shrinkOn = 120,
             headerElement = document.getElementById('js-header');
-            if(width > 400){
-                if(distanceY > shrinkOn){
-                    headerElement.classList.add('smaller');
-                    
-                }else{
-                    headerElement.classList.remove('smaller');
-                }
+            if(distanceY > shrinkOn){
+                headerElement.classList.add('smaller');
+                
+            }else{
+                headerElement.classList.remove('smaller');
+            }
+
+            if(width < 500){
+                headerElement.classList.remove('smaller');
             }
     }
 

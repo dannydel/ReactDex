@@ -1,0 +1,67 @@
+.PokemonTypeBadge{
+    margin:0px 5px 0px 5px;
+    padding:5px;
+    background-color:green;
+    color:white;
+    border-radius:5px;
+}
+
+.water{
+    background-color: #6891F0;
+}
+
+.fire{
+    background-color:#F17D34;
+}
+
+.grass{
+    background-color:#7CAF5D;
+}
+
+.bug{
+    background-color:#A2B21F;
+}
+
+.ground{
+    background-color:#C4B170;
+}
+
+.poison{
+    background-color:#9B449C;
+}
+
+.ice{
+    background-color:#98D8D8;
+}
+
+.fight{
+    background-color:#C02D29;
+}
+
+.psychic{
+    background-color:#F45482;
+}
+
+.rock{
+    background-color:#BAA33E;
+}
+
+.dragon{
+    background-color:#6A49C3;
+}
+
+.electric{
+    background-color:#F1CD30;
+}
+
+.ghost{
+    background-color:#6C5595;
+}
+
+.flying{
+    background-color:#A892E5;
+}
+
+.fairy{
+    background-color:#DBA2DC;
+}
