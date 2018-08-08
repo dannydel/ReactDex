@@ -29,7 +29,7 @@ class Pokedex extends PureComponent {
         .then(data =>  
             this.setState({
                 pokemonDetails: data,
-                fetched : true,
+                fetched : true
             })
         );
 

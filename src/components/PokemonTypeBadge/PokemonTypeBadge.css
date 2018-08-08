@@ -31,11 +31,19 @@
 }
 
 .ice{
-    background-color:#98D8D8;
+    background-color:rgb(100, 214, 214);
 }
 
-.fight{
+.fighting{
     background-color:#C02D29;
+}
+
+.normal{
+    background-color:#A8A998;
+}
+
+.steel{
+    background-color:#A9A8BA;
 }
 
 .psychic{
@@ -59,7 +67,7 @@
 }
 
 .flying{
-    background-color:#A892E5;
+    background-color:rgb(146, 182, 229);
 }
 
 .fairy{

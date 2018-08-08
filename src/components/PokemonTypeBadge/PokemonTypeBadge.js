@@ -6,14 +6,12 @@ class PokemonTypeBadge extends PureComponent{
     render(){
         const {type} = this.props;
 
-        const styleType = "PokemonTypeBadge " + type; 
-
         return(
             <Fragment>
-                <span className={styleType}>{type}</span>
+                <span className={"PokemonTypeBadge " +type}>{type}</span>
             </Fragment>
         )
     }
 }
 
-export default PokemonTypeBadge
+export default PokemonTypeBadge;

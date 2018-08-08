@@ -1,9 +1,8 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import PokemonImage from '../PokemonImage/PokemonImage';
-import PokemonTypeBadge from '../PokemonTypeBadge/PokemonTypeBadge';
+import PokemonDetails from '../PokemonDetails/PokemonDetails';
 import '../PokemonCard/PokemonCard.css';
-
 
 class PokemonCard extends PureComponent{
     constructor(){
@@ -15,12 +14,6 @@ class PokemonCard extends PureComponent{
         
     }
     getPokemonDetails(name){
-       // e.preventDefault();
-        // this.setState({
-        //     pokemonDetails : [],
-        //     fetched : false,
-        // })
-        let details;
 
         fetch('https://pokeapi.co/api/v2/pokemon/' + name + '/')
         .then(res => res.json())
@@ -33,20 +26,12 @@ class PokemonCard extends PureComponent{
     }
 
     showDetails(name){
-        console.log('Clicked mo fo');
         this.getPokemonDetails(name);
 
-        
-            let card = document.getElementById(name + '_card');
-            card.querySelector('.PokemonCard__Back').classList.toggle('PokemonCard__Back__Show');
-            card.classList.toggle('is-flipped');
+        let card = document.getElementById(name + '_card');
+        card.querySelector('.PokemonCard__Back').classList.toggle('PokemonCard__Back__Show');
+        card.classList.toggle('is-flipped');
 
-            console.log(this.state.pokemonDetails);
-        
-
-        //go fetch details and display details area once fetch is complete?
-        // also need to keep state for each card 
-        //  (setup constructor to have state for show or hide details)
     }
 
     getImageSource(url){
@@ -61,6 +46,7 @@ class PokemonCard extends PureComponent{
     render(){
         const {name, url, onClick} = this.props;
         const details = this.state.pokemonDetails;
+        const fetched = this.state.fetched;
         return(
             <Fragment key={name + "_card"} >
                 {/* <div className="PokemonCard"  onClick={onClick}> */}
@@ -71,17 +57,10 @@ class PokemonCard extends PureComponent{
                             <h4 className="card-title" key={name + "_name"}>{this.capitalizeName(name)}</h4>
                         </div>
                         <div className="PokemonCard__Face PokemonCard__Back">
-                            <h4>Types</h4>
-                            {/* {
-                                <ul>
-                                    { 
-                                        Object.keys(details.types).map((key) => {
-                                            return <PokemonTypeBadge type={details.types[key].type.name} />
-                                        })
-                                    }
-                                </ul> 
-                            } */}
-                            {/* List of Moves <MoveList moves={moves} /> */}
+                            {
+                                fetched ? <PokemonDetails  details={details}/> : 
+                                <h3>Fetching {name}'s details!</h3>
+                            }
                         </div>
                     </div>
                 </div>
