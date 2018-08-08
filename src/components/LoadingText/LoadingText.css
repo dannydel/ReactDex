@@ -1,3 +1,36 @@
-.Pokedex__Loading{
-    margin:0 auto;
+
+
+@media screen and (max-width:1900px){
+    .Pokedex__Loading{
+        margin-left: 675px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1500px){
+    .Pokedex__Loading{
+        margin-left: 400px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .Pokedex__Loading{
+        margin-left: 290px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:800px){
+    .Pokedex__Loading{
+        margin-left:150px;
+    }
+}
+
+
+
+@media screen and (max-width:600px){
+    .Pokedex__Loading{
+        margin-left:0px;
+    }
 }

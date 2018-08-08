@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './Pokedex.css';
 
-import PokemonRow from '../PokemonCard/PokemonCard';
+import PokemonCard from '../PokemonCard/PokemonCard';
 import LoadingText from '../LoadingText/LoadingText';
 import PokedexHeader from '../PokedexHeader/PokedexHeader';
 
@@ -12,29 +12,7 @@ class Pokedex extends PureComponent {
         super();
 
         this.state = {pokemonDetails : [], fetched : false};
-
-        this.fetchPokemonDetails = this.fetchPokemonDetails.bind(this);
-
     }
-
-    fetchPokemonDetails(name,e){
-        e.preventDefault();
-        this.setState({
-            pokemonDetails : [],
-            fetched : false,
-        })
-
-        fetch('https://pokeapi.co/api/v2/pokemon/' + name + '/')
-        .then(res => res.json())
-        .then(data =>  
-            this.setState({
-                pokemonDetails: data,
-                fetched : true
-            })
-        );
-
-    }
-
 
     render(){
          const { updateSearch, pokemon, loading } = this.props;
@@ -44,19 +22,16 @@ class Pokedex extends PureComponent {
                 <PokedexHeader title={"ReactDex"} updateSearch={updateSearch} />
                 <div className="container">
                     <div className="Pokedex__Main">
-                    {/* <PokemonSearchInput onInput={updateSearch} /> */}
                         <div className="Pokedex__Grid">
                             {
                                 !loading && pokemon.length > 0 ? pokemon.map(p =>( 
-                                    <PokemonRow 
+                                    <PokemonCard 
                                         key={p.name}
                                         name={p.name} 
-                                        url={p.url} 
-                                        onClick={ (e) => 
-                                            {this.fetchPokemonDetails(p.name,e)}}
-                                        />
+                                        url={p.url}
+                                    />
                                     )) : 
-                                     <LoadingText />
+                                     <LoadingText text="Loading Reactdex" />
                                 }
                         </div>
                     </div>
@@ -72,11 +47,11 @@ Pokedex.propTypes = {
     pokemon : PropTypes.arrayOf(
         PropTypes.shape({
             url : PropTypes.string,
-            name: PropTypes.string,
+            name: PropTypes.string
         })
     ),
 
-    updateSearch : PropTypes.func.isRequired,
+    updateSearch : PropTypes.func.isRequired
 };
 
 Pokedex.defaultProps = {

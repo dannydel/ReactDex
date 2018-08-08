@@ -30,6 +30,7 @@
         grid-gap: 10px;
         padding: 10px;
     }
+
 }
 
 
@@ -69,9 +70,6 @@
         padding-top:12em;
     }
 } 
-
-
-
 
 @media screen and (max-width:600px){
     .Pokedex__Grid{
