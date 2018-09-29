@@ -1,6 +1,7 @@
 import React, { PureComponent} from 'react';
 import  PropTypes  from 'prop-types';
 import './PokedexHeader.css';
+import { isMobile } from '../../utils/Common';
 import PokemonSearchInput from  '../PokemonSearchInput/PokemonSearchInput';
 
 class PokedexHeader extends PureComponent {
@@ -10,6 +11,7 @@ class PokedexHeader extends PureComponent {
     }
 
     resizeHeaderOnScroll(){
+       if(!isMobile()){
         const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         const distanceY = window.pageYOffset || 
             document.documentElement.scrollTop,
@@ -25,6 +27,7 @@ class PokedexHeader extends PureComponent {
             if(width < 500){
                 headerElement.classList.remove('smaller');
             }
+       }
     }
 
     
@@ -39,7 +42,7 @@ class PokedexHeader extends PureComponent {
                     </nav>
                 </div>
             </header>
-        )
+        );
     }
 }
 

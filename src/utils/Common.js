@@ -7,3 +7,10 @@ export function capitalizeWord(word){
     return word.replace(/^\w/, c => c.toUpperCase());
 }
 
+export function isMobile(){
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        return true;
+    }
+    return false;
+}
+

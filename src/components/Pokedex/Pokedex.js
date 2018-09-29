@@ -5,6 +5,7 @@ import './Pokedex.css';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import LoadingText from '../LoadingText/LoadingText';
 import PokedexHeader from '../PokedexHeader/PokedexHeader';
+import ToTop from '../ToTop/ToTop';
 
 
 class Pokedex extends PureComponent {
@@ -36,6 +37,7 @@ class Pokedex extends PureComponent {
                         </div>
                     </div>
                 </div>
+                <ToTop />
             </Fragment>
         );
     }

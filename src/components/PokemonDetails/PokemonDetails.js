@@ -8,7 +8,6 @@ class PokemonDetails extends PureComponent{
         
         return(
             <Fragment>
-                {/* <h2>{details.name.replace(/^\w/, c => c.toUpperCase())}</h2> */}
                     {
                     
                     
@@ -18,16 +17,22 @@ class PokemonDetails extends PureComponent{
                     
                     
                     }
-                <h2>Abilities:</h2>
+                <h4>Abilities:</h4>
                 {
                     <ul>
                         {
                             Object.keys(details.abilities).map((key) =>{
-                                return <li key={key}>{details.abilities[key].ability.name}</li>
+                                return <li key={key}>{details.abilities[key].ability.name}</li>;
                             })
                         }
                     </ul>
                 }
+                {/* <h4>Moves:</h4>
+                {
+                    Object.keys(details.moves).map((key) => {
+                        return <span key={key}>{details.moves[key].move.name}</span>;
+                    })
+                } */}
             </Fragment>
         )
     }
